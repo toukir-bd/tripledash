@@ -3,6 +3,7 @@ import { auth } from "@/auth";
 import { signIn } from "@/auth";
 import { GoogleSignIn } from "@/components/google-signin";
 import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { executeAction } from "@/lib/executeAction";
 import Link from "next/link";
@@ -13,7 +14,7 @@ const Page = async () => {
   if (session) redirect("/dashboard");
 
   return (
-    <div className="w-full max-w-sm mx-auto space-y-6">
+    <Card>
       <h1 className="text-2xl font-bold text-center mb-6">Sign In</h1>
       <GoogleSignIn/>
       <div className="relative">
@@ -26,8 +27,6 @@ const Page = async () => {
           </span>
         </div>
       </div>
-
-      {/* Email/Password Sign In */}
       <form
         className="space-y-4"
         action={async (formData) => {
@@ -53,7 +52,7 @@ const Page = async () => {
           required
           autoComplete="current-password"
         />
-        <Button className="w-full" type="submit">
+        <Button className="w-full" variant="default" type="submit">
           Sign In
         </Button>
       </form>
@@ -64,11 +63,13 @@ const Page = async () => {
         </Button>
         <div className="p-10">
           <Button variant="default">Default</Button>
-          <Button variant="destructive">Delete</Button>
-          <Button variant="outline" size="sm">Outline Small</Button>
+          <Button variant="primary">Primary</Button>
+          <Button variant="success">Outline Small</Button>
+          <Button variant="warning">Outline Small</Button>
+          <Button variant="danger">Outline Small</Button>
         </div>
       </div>
-    </div>
+    </Card>
   );
 };
 
