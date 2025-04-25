@@ -1,5 +1,4 @@
 import { auth } from "@/auth";
-
 import { signIn } from "@/auth";
 import { GoogleSignIn } from "@/components/google-signin";
 import { Button } from "@/components/ui/button";
@@ -14,18 +13,11 @@ const Page = async () => {
   if (session) redirect("/dashboard");
 
   return (
-    <Card>
-      <h1 className="text-2xl font-bold text-center mb-6">Sign In</h1>
+    <Card className="w-[450px]">
+      <h1 className="mb-5 text-4xl font-bold text-center tracking-tight">Sign In</h1>
       <GoogleSignIn/>
-      <div className="relative">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t" />
-        </div>
-        <div className="relative flex justify-center text-sm">
-          <span className="bg-background px-2 text-muted-foreground">
-            Or continue with email
-          </span>
-        </div>
+      <div className="relative flex justify-center text-sm text-[#0C0D11]/[.7] font-medium my-3">
+          Or, Continue with Email
       </div>
       <form
         className="space-y-4"
@@ -57,17 +49,11 @@ const Page = async () => {
         </Button>
       </form>
 
-      <div className="text-center">
-        <Button asChild variant="link">
-          <Link href="/sign-up">Don&apos;t have an account? Sign up</Link>
+      <div className="text-sm text-[#0C0D11]/[.7] font-semibold text-center flex items-center justify-center">
+        Don&apos;t have an account?
+        <Button asChild variant="link" className="py-0 px-1">
+          <Link href="/sign-up" className="text-[#0051FF] font-semibold">Sign up</Link>
         </Button>
-        <div className="p-10">
-          <Button variant="default">Default</Button>
-          <Button variant="primary">Primary</Button>
-          <Button variant="success">Outline Small</Button>
-          <Button variant="warning">Outline Small</Button>
-          <Button variant="danger">Outline Small</Button>
-        </div>
       </div>
     </Card>
   );
