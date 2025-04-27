@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cn } from "@/lib/utils"
 
-const Navmenu = React.forwardRef<HTMLButtonElement, React.ComponentProps<"button">>(
+const SectionMenu = React.forwardRef<HTMLButtonElement, React.ComponentProps<"button">>(
   ({ className, ...props }, ref) => {
     return (
       <button className={cn(
@@ -14,5 +14,5 @@ const Navmenu = React.forwardRef<HTMLButtonElement, React.ComponentProps<"button
     )
   }
 )
-Navmenu.displayName = "FilledButton"
-export { Navmenu }
+SectionMenu.displayName = "SectionMenu"
+export { SectionMenu }
